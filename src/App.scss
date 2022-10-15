@@ -1,6 +1,28 @@
 @import "styles/global.scss";
 @import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono");
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 50px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #898989;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fefefe;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e2d7d7;
+}
+
 body {
   font-family: "Ubuntu mono";
   background: var(--bodyColor);
