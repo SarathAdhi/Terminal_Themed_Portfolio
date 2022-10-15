@@ -15,6 +15,8 @@ const App = () => {
   const { fetchProjects } = zustandStore();
 
   useEffect(() => {
+    document.title = "Sarath Terminal 🔥";
+
     window.addEventListener(
       "keydown",
       (e) => {

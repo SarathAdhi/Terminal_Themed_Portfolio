@@ -29,17 +29,20 @@ export const TerminalBox = () => {
 
   const elementRef = React.useRef(null);
 
-  const handleKeyUp = useCallback((e: KeyboardEvent) => {
-    if (e.ctrlKey && e.key === "v") {
-      navigator.clipboard.readText().then((clipboard) => {
-        setText(clipboard, e.keyCode);
-      });
+  const handleKeyUp = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.key === "v") {
+        navigator.clipboard.readText().then((clipboard) => {
+          setText(clipboard, e.keyCode);
+        });
 
-      return;
-    }
+        return;
+      }
 
-    setText(e.key, e.keyCode);
-  }, []);
+      setText(e.key, e.keyCode);
+    },
+    [setText]
+  );
 
   useEffect(() => {
     document.body.addEventListener("keyup", handleKeyUp);
