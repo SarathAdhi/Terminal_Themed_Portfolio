@@ -1,5 +1,5 @@
 import { TerminalAnswer } from "components/TerminalAnswer";
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { zustandStore } from "utils/store";
 import "./terminalBody.scss";
 
@@ -29,7 +29,7 @@ export const TerminalBox = () => {
 
   const elementRef = React.useRef(null);
 
-  const handleKeyUp = (e: KeyboardEvent) => {
+  const handleKeyUp = useCallback((e: KeyboardEvent) => {
     if (e.ctrlKey && e.key === "v") {
       navigator.clipboard.readText().then((clipboard) => {
         setText(clipboard, e.keyCode);
@@ -39,7 +39,7 @@ export const TerminalBox = () => {
     }
 
     setText(e.key, e.keyCode);
-  };
+  }, []);
 
   useEffect(() => {
     document.body.addEventListener("keyup", handleKeyUp);
