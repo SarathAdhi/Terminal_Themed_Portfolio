@@ -40,7 +40,7 @@ const TopTerminalBar = () => {
 };
 
 export const Terminal: React.FC = () => {
-  const [isMobileDevice, setIsMobileDevice] = useState(window.innerWidth < 500);
+  const [isMobileDevice] = useState(window.innerWidth < 500);
 
   const { isClosed, isMaximized, isMinimized } = themeStore();
 
