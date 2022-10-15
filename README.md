@@ -11,6 +11,12 @@
 - TypeScript
 - SCSS `(CSS)`
 
+# Results generated using Lighthouse (Super optimized website)
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/91727830/195993754-070c1481-fbde-46d4-bd77-0efe8c38b932.png" />
+</div>
+  
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
