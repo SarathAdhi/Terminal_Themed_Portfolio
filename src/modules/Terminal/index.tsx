@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { TerminalBox } from "components/TerminalBody";
 import { themeStore } from "utils/store";
 import "./terminal.scss";
@@ -38,14 +39,16 @@ const TopTerminalBar = () => {
   );
 };
 
-export const Terminal = () => {
+export const Terminal: React.FC = () => {
+  const [isMobileDevice, setIsMobileDevice] = useState(window.innerWidth < 500);
+
   const { isClosed, isMaximized, isMinimized } = themeStore();
 
   return (
     <div
-      className={`Terminal_Container ${isClosed && "closed"} ${
-        isMaximized ? "maximized" : isMinimized && "minimized"
-      }`}
+      className={`${isMobileDevice && "Mobile_Container"} Terminal_Container ${
+        isClosed && "closed"
+      } ${isMaximized && "maximized"} ${isMinimized && "minimized"}`}
     >
       <TopTerminalBar />
       <TerminalBox />

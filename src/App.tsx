@@ -30,6 +30,11 @@ const App = () => {
 
   return (
     <div className="container">
+      {/* <button onClick={() => document.getElementById("input")?.click()}>
+        Open keyboard
+      </button>
+
+      <input id="input" style={{ display: "none" }} /> */}
       <Terminal />
     </div>
   );
