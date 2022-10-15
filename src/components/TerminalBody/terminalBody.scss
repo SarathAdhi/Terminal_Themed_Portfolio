@@ -1,0 +1,67 @@
+@import "styles/global.scss";
+
+.Terminal_Body {
+  height: 100%;
+  padding-top: 5px;
+  border-radius: 0px 0px 5px 5px;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 2px;
+  padding-right: 5px;
+  overflow-y: auto;
+
+  .Terminal_Intro {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    p {
+      span {
+        color: var(--cdDirectoryColor);
+      }
+    }
+  }
+}
+
+.Prompt_user {
+  margin-top: 5px;
+  color: var(--promptUserColor);
+  display: flex;
+  align-items: center;
+  gap: 1px;
+
+  .Prompt_location {
+    color: #6d85a9;
+  }
+
+  .Prompt_dollar {
+    color: #ddd;
+  }
+
+  .Prompt_text {
+    color: var(--textColor);
+    margin-left: 4px;
+  }
+
+  .Prompt__cursor {
+    width: 8px;
+    height: 16px;
+    background: white;
+    display: inline-block;
+    margin-left: 1px;
+    animation: 1000ms ease infinite alternate blink;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

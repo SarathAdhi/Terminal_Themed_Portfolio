@@ -1,0 +1,39 @@
+html[data-theme="linux"] {
+  --bodyColor: linear-gradient(45deg, #390c78 10%, #f57453 100%);
+  --toolBarColor: linear-gradient(#504b45 0%, #3c3b37 100%);
+  --backgroundColor: #2c0d23;
+  --promptUserColor: #87d441;
+  --textColor: white;
+  --cdDirectoryColor: #00b3ff;
+}
+
+html[data-theme="light"] {
+  background-color: white;
+  --lightBtn: #ffbd07;
+  --lightBg: #232323;
+  --lightColor: #fff;
+}
+
+.faj-b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  max-width: 100%;
+}
+
+.mt-5 {
+  margin-top: 5px !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}

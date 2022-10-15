@@ -1,0 +1,41 @@
+.Function_container {
+  p {
+    white-space: pre-wrap;
+  }
+
+  ul {
+    margin-top: 10px;
+    list-style: none;
+
+    li {
+      margin: 2px 0px;
+      list-style-position: inside;
+    }
+  }
+}
+
+.Project_section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .faj-b-project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    a {
+      color: var(--cdDirectoryColor);
+    }
+
+    span {
+      color: var(--cdDirectoryColor);
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
