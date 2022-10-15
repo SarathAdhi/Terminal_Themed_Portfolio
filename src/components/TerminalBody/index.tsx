@@ -56,7 +56,7 @@ export const TerminalBox = () => {
     // Scroll down to the bottom of the terminal
     // @ts-ignore
     elementRef.current.scrollIntoView();
-  }, [arrayText]);
+  }, [arrayText, text]);
 
   return (
     <div className="Terminal_Body">
@@ -83,7 +83,7 @@ export const TerminalBox = () => {
 
       <PromptComp text={text} />
 
-      <div ref={elementRef} />
+      <div ref={elementRef} id="bottom" />
     </div>
   );
 };

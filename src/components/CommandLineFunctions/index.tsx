@@ -49,7 +49,7 @@ export const CommandLineFunctions = [
         <p>List all available commands</p>
 
         <ul className="ml-20">
-          <li>sara: Display information about myself</li>
+          <li>{"sara: Display's information about myself"}</li>
 
           <ul className="ml-20">
             <li className="faj-b">
@@ -85,7 +85,7 @@ export const CommandLineFunctions = [
                 <span>-w</span>
               </p>
 
-              <p className="mb-10">This command describe about me</p>
+              <p className="mb-10">This command describes about me</p>
             </li>
 
             <li>
@@ -95,7 +95,7 @@ export const CommandLineFunctions = [
               </p>
 
               <p className="mb-10">
-                This command shows all the project that I have done
+                This command shows all the project that I have done so far
               </p>
             </li>
           </ul>
