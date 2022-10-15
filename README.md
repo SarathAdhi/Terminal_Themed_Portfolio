@@ -1,4 +1,15 @@
-# Linux Terminal Portfolio
+# `Linux Terminal Portfolio`
+
+# Tech Stack
+
+- [Reactjs](https://reactjs.org/)
+- [SCSS - CSS](https://sass-lang.com/)
+- [Zustand - State Management](https://zustand-demo.pmnd.rs/)
+
+# Languages
+
+- TypeScript
+- SCSS `(CSS)`
 
 # Getting Started with Create React App
 
