@@ -26,7 +26,7 @@ const App = () => {
     );
 
     fetchProjects();
-  }, []);
+  }, [fetchProjects]);
 
   return (
     <div className="container">

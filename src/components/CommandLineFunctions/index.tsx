@@ -13,7 +13,7 @@ const Projects = () => {
         <div key={project._id} className="Function_container">
           <ul>
             <li className="faj-b-project">
-              <a href={project.demo} target="_blank">
+              <a href={project.demo} target="_blank" rel="noreferrer">
                 {project.name}
               </a>
 

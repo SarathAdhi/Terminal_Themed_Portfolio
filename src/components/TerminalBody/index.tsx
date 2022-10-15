@@ -1,5 +1,5 @@
 import { TerminalAnswer } from "components/TerminalAnswer";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { zustandStore } from "utils/store";
 import "./terminalBody.scss";
 
@@ -47,7 +47,7 @@ export const TerminalBox = () => {
     return () => {
       document.body.removeEventListener("keyup", handleKeyUp);
     };
-  }, []);
+  }, [handleKeyUp]);
 
   useEffect(() => {
     // Scroll down to the bottom of the terminal
