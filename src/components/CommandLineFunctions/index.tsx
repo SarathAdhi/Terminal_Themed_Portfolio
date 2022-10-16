@@ -9,11 +9,11 @@ const Projects = () => {
   if (projects.length === 0) return <div>Loading...</div>;
 
   return (
-    <div className="Project_section">
+    <div className="Project_section Function_container">
       {projects.map((project) => (
-        <div key={project._id} className="Function_container">
-          <ul>
-            <li className="faj-b-project">
+        <ul key={project._id}>
+          <li className="faj-b-project">
+            <span>
               <a href={project.demo} target="_blank" rel="noreferrer">
                 {project.name}
               </a>
@@ -26,11 +26,11 @@ const Projects = () => {
               >
                 cd {formatTitle(project.name)} -p
               </span>
-            </li>
+            </span>
 
-            <li className="mt-5">{project.about.split(".")[0]}</li>
-          </ul>
-        </div>
+            <p className="mt-5">{project.about.split(".")[0]}</p>
+          </li>
+        </ul>
       ))}
     </div>
   );
@@ -145,10 +145,10 @@ I live in Chennai and I am passionate about learning new things. I am currently 
     functions: "sara --socials",
     shortcut: "sara -s",
     description: (
-      <div className="Socials_section">
-        {socialMediaLinks.map(({ name, href }) => (
-          <ul key={formatTitle(name)}>
-            <li className="faj-b-socials">
+      <div className="Socials_section ">
+        <ul>
+          {socialMediaLinks.map(({ name, href }) => (
+            <li key={formatTitle(name)} className="mt-5 faj-b-socials">
               <a href={href} target="_blank" rel="noreferrer">
                 {name}
               </a>
@@ -162,10 +162,8 @@ I live in Chennai and I am passionate about learning new things. I am currently 
                 cd {formatTitle(name)} -s
               </span>
             </li>
-
-            <li className="mt-5">{name}</li>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </div>
     ),
   },

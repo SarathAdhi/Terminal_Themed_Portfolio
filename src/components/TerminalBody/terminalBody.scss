@@ -27,33 +27,35 @@
   }
 }
 
-.Prompt_user {
-  margin-top: 5px;
-  color: var(--promptUserColor);
-  display: flex;
-  align-items: center;
-  gap: 1px;
+.Prompt_wrapper {
+  .Prompt_user {
+    margin-top: 5px;
+    color: var(--promptUserColor);
+    display: flex;
+    align-items: center;
+    gap: 1px;
 
-  .Prompt_location {
-    color: #6d85a9;
-  }
+    .Prompt_location {
+      color: #6d85a9;
+    }
 
-  .Prompt_dollar {
-    color: #ddd;
-  }
+    .Prompt_dollar {
+      color: #ddd;
+    }
 
-  .Prompt_text {
-    color: var(--textColor);
-    margin-left: 4px;
-  }
+    .Prompt_text {
+      color: var(--textColor);
+      margin-left: 4px;
+    }
 
-  .Prompt__cursor {
-    width: 8px;
-    height: 16px;
-    background: white;
-    display: inline-block;
-    margin-left: 1px;
-    animation: 1000ms ease infinite alternate blink;
+    .Prompt__cursor {
+      width: 8px;
+      height: 16px;
+      background: white;
+      display: inline-block;
+      margin-left: 1px;
+      animation: 1000ms ease infinite alternate blink;
+    }
   }
 }
 

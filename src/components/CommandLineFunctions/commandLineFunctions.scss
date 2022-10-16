@@ -4,7 +4,6 @@
   }
 
   ul {
-    margin-top: 10px;
     list-style: none;
 
     li {
@@ -17,13 +16,22 @@
 .Project_section {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 
   .faj-b-project {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    flex-direction: column;
+    width: 98%;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p {
+      width: 50%;
+    }
 
     a {
       color: var(--cdDirectoryColor);
@@ -49,7 +57,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 98%;
 
     a {
       color: var(--cdDirectoryColor);

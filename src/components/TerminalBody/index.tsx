@@ -12,7 +12,7 @@ const PromptComp: React.FC<PromptCompProps> = ({
   text,
   isPrevious = false,
 }) => (
-  <div className="">
+  <div className="Prompt_wrapper">
     <span className="Prompt_user">
       sarath@ubuntu:<span className="Prompt_location">~</span>
       <span className="Prompt_dollar">$</span>
