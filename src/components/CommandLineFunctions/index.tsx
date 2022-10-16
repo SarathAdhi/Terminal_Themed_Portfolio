@@ -67,6 +67,11 @@ export const CommandLineFunctions = [
               <span>--projects</span>
               <span>-p</span>
             </li>
+
+            <li className="faj-b">
+              <span>--socials</span>
+              <span>-s</span>
+            </li>
           </ul>
         </ul>
       </div>
