@@ -39,3 +39,29 @@
     }
   }
 }
+
+.Socials_section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .faj-b-socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    a {
+      color: var(--cdDirectoryColor);
+    }
+
+    span {
+      color: var(--cdDirectoryColor);
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

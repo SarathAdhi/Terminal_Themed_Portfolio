@@ -1,5 +1,41 @@
+import { Project } from "types/project";
+import { socialMediaLinks } from "./constants";
 import { formatTitle } from "./format";
 import { zustandStoreProps } from "./store";
+
+export const isProjectExist = (projectName: string, projects: Project[]) => {
+  const cdProject =
+    projectName.split(" ")[0] === "cd" && projectName.split(" ")[2] === "-p";
+
+  if (cdProject) {
+    const _project = projects.find(
+      (project) => formatTitle(project.name) === projectName.split(" ")[1]
+    );
+
+    if (_project !== undefined) {
+      return _project;
+    }
+
+    return false;
+  }
+};
+
+export const isSocialHandleExist = (socialName: string) => {
+  const cdSocial =
+    socialName.split(" ")[0] === "cd" && socialName.split(" ")[2] === "-s";
+
+  if (cdSocial) {
+    const social = socialMediaLinks.find(
+      ({ name }) => formatTitle(name) === socialName.split(" ")[1]
+    );
+
+    if (social !== undefined) {
+      return social;
+    }
+
+    return false;
+  }
+};
 
 type HandleTextFunctionProps = {
   userInput: string;
@@ -16,20 +52,17 @@ export const handleText = ({
   userInput,
 }: HandleTextFunctionProps) => {
   if (userInput === "Enter") {
-    const cd = text.split(" ")[0] === "cd" && text.split(" ")[2] === "-p";
+    const project = isProjectExist(text, projects);
+    const social = isSocialHandleExist(text);
 
-    if (cd) {
-      const getUrl = projects.find(
-        (project) => formatTitle(project.name) === text.split(" ")[1]
-      );
-
-      if (getUrl !== undefined) {
-        setTimeout(() => window.open(getUrl.demo, "_blank"), 1000);
-      }
+    if (project) {
+      setTimeout(() => window.open(project.demo, "_blank"), 1000);
+    } else if (social) {
+      setTimeout(() => window.open(social.href, "_blank"), 1000);
     }
 
     setArrayText();
-    return { text: "" };
+    return { text: "", currentArrayTextCount: arrayText.length };
   }
 
   if (userInput === "ArrowUp" && currentArrayTextCount >= 0) {
@@ -41,10 +74,10 @@ export const handleText = ({
 
   if (
     userInput === "ArrowDown" &&
-    currentArrayTextCount < arrayText.length - 1
+    currentArrayTextCount < arrayText.length - 2
   ) {
     return {
-      text: arrayText[currentArrayTextCount + 1],
+      text: arrayText[currentArrayTextCount + 2],
       currentArrayTextCount: currentArrayTextCount + 1,
     };
   }

@@ -1,3 +1,4 @@
+import { socialMediaLinks } from "utils/constants";
 import { formatTitle } from "utils/format";
 import { zustandStore } from "utils/store";
 import "./commandLineFunctions.scss";
@@ -85,7 +86,7 @@ export const CommandLineFunctions = [
                 <span>-w</span>
               </p>
 
-              <p className="mb-10">This command describes about me</p>
+              <p className="mt-5 mb-10">This command describes about me</p>
             </li>
 
             <li>
@@ -94,8 +95,19 @@ export const CommandLineFunctions = [
                 <span>-p</span>
               </p>
 
-              <p className="mb-10">
+              <p className="mt-5 mb-10">
                 This command shows all the project that I have done so far
+              </p>
+            </li>
+
+            <li>
+              <p className="faj-b">
+                <span>--socials</span>
+                <span>-s</span>
+              </p>
+
+              <p className="mt-5 mb-10">
+                This command shows all of my social media handles
               </p>
             </li>
           </ul>
@@ -123,5 +135,33 @@ I live in Chennai and I am passionate about learning new things. I am currently 
     functions: "sara --projects",
     shortcut: "sara -p",
     description: <Projects />,
+  },
+  {
+    functions: "sara --socials",
+    shortcut: "sara -s",
+    description: (
+      <div className="Socials_section">
+        {socialMediaLinks.map(({ name, href }) => (
+          <ul key={formatTitle(name)}>
+            <li className="faj-b-socials">
+              <a href={href} target="_blank" rel="noreferrer">
+                {name}
+              </a>
+
+              <span
+                onClick={() => {
+                  const clipboard = `cd ${formatTitle(name)} -s`;
+                  navigator.clipboard.writeText(clipboard);
+                }}
+              >
+                cd {formatTitle(name)} -s
+              </span>
+            </li>
+
+            <li className="mt-5">{name}</li>
+          </ul>
+        ))}
+      </div>
+    ),
   },
 ];

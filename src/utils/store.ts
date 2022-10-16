@@ -47,7 +47,9 @@ export const zustandStore = create<zustandStoreProps>((set) => ({
     set({ arrayText: [] });
   },
 
-  currentArrayTextCount: 0,
+  currentArrayTextCount: localStorage.getItem("arrayText")
+    ? JSON.parse(localStorage.getItem("arrayText")!).length - 1
+    : 0,
 
   setArrayText: () => {
     set(({ text, arrayText }) => {
@@ -56,7 +58,7 @@ export const zustandStore = create<zustandStoreProps>((set) => ({
       localStorage.setItem("arrayText", JSON.stringify(newArrayText));
 
       return {
-        currentArrayTextCount: arrayText.length,
+        currentArrayTextCount: arrayText.length - 1,
         arrayText: newArrayText,
       };
     });
